@@ -1,0 +1,53 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    max-width: 100px; /* Adjust as needed */
+    height: auto;
+}
+
+header h1 {
+    margin-top: 10px;
+}
+
+hr {
+    border: 1px solid #ddd;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.members {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.member {
+    border: 1px dashed red;
+    width: 100%;
+    height: auto;
+    border-bottom: 0px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
