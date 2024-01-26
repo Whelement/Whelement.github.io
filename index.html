@@ -4,29 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whelement</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        hr {
+            border: 1px solid #333;
+            margin: 20px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        #members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .member {
+            border: 1px dashed red;
+            width: 30%;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-
     <header>
-        <img src="whale.png" alt="Whelement Logo">
+        <img src="whale.png" alt="Whale Image">
         <h1>Whelement</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#crsh1tty">View crsh1tty</a></li>
-            <li><a href="#members">Members</a></li>
-        </ul>
-    </nav>
+    <hr>
 
-    <section class="main-content" id="crsh1tty">
-        <h2>View crsh1tty</h2>
-        <p><a href="crsh1tty/index.html">whelement.github.io/crsh1tty/index.html</a></p>
-    </section>
+    <p>View crsh1tty: <a href="crsh1tty/index.html">whelement.github.io/crsh1tty/index.html</a></p>
 
-    <section class="members" id="members">
-        <h2>Members</h2>
+    <hr>
+
+    <h2>Members</h2>
+    <div id="members">
         <div class="member">crossystem</div>
         <div class="member">0x90b1</div>
         <div class="member">CoolOblivion759</div>
@@ -34,12 +82,13 @@
         <div class="member">osama</div>
         <div class="member">Windows XP</div>
         <div class="member">boeing 747</div>
-    </section>
+    </div>
+
+    <p>Copyright Whelement, 2023-2024. Source is at <a href="https://github.com/Whelement/Whelement.github.io" target="_blank">github.com/Whelement/Whelement.github.io</a></p>
+    <p>Above is not a legal statement</p>
 
     <footer>
-        <p>&copy; Whelement, 2023-2024. Source is at <a href="https://github.com/Whelement/Whelement.github.io">github.com/Whelement/Whelement.github.io</a></p>
-        <p>Above is not a legal statement</p>
+        <p>&copy; Whelement, 2023-2024</p>
     </footer>
-
 </body>
 </html>
