@@ -1,131 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:medium">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="darkreader-lock">
     <title>Whelement</title>
     <style>
-        @font-face {
-            font-family: space-grotesk;
-            src: url(SpaceGrotesk-Medium.ttf);/*lol thanks mw*/
-            font-display: swap
-        }
         body {
-            font-family: space-grotesk, sans-serif;
-            background-color: darkgray;
+            font-family: "Space Grotesk", serif;
             margin: 0;
             padding: 0;
-            text-align: center;
-            line-height: calc(4px + 2ex);
+            background: #1d2936;
+            color: #333;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+      html {
+        box-sizing: border-box;
+      }
+      
+        main {
             padding: 20px;
         }
 
-        img {
-            max-width: 150%;
-            height: auto;
-        }
-
-        h1 {
-            color: #2e3dff;
-        }
-
-        hr {
-            border: 1px solid #333;
-            margin: 20px 0;
-        }
-
-        p {
-            margin: 10px 0;
-        }
-
-        #members {
+        /* Navigation Menu Styles */
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
+            background: #3498db;
+            border-radius: 5px;
+            overflow: hidden;
         }
 
-        .member {
-            border: 2px dotted #333;
-            width: 30%;
-            margin: 10px 0;
+        .nav-item {
+            margin: 0;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-item button {
+            padding: 15px;
+            background: #3498db;
+            border: none;
+            color: #ecf0f1;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-item:hover button {
+            background: #2980b9;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: #3498db;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            padding: 0; /* Remove default padding */
+        }
+
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown-item {
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .dropdown-item button {
+            background: #3498db;
+            border: none;
+            color: #ecf0f1;
+            cursor: pointer;
+            transition: background 0.3s;
             padding: 10px;
-            box-sizing: border-box;
-            border-radius: 2px;
+            display: block; /* Make the button a block-level element */
+            width: 100%; /* Full width of the container */
+        }
+
+        .dropdown-item:hover button {
+            background: #2980b9;
         }
 
         footer {
-            background-color: #333;
-            color: #fff;
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
             padding: 10px;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
-
-        .m1 {
-            display: block;
+        h1 {
+          text-align: center;
+          color: white;
+        }
+        h2 {
+          text-align: center;
+          color: white;
+        }
+        p {
+          text-align: center;
+          color: white;
         }
 
-        .m1:hover ~ .d1 {
-            display: block;
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      .column {
+        float: left;
+        width: 25%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+      }
+
+      .card {
+        border: 2px dotted white;
+        margin: 8px;
+      }
+
+      .about-section {
+        padding: 50px;
+        text-align: center;
+        background-color: #474e5d;
+        color: white;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .container::after, .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .title {
+        color: grey;
+      }
+
+      .button {
+        font-family: "Space Grotesk", serif;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #11181f;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .button:hover {
+        background-color: #555;
+      }
+
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
         }
+      }
 
-        .d1 {
-            display: none;
-        }
+      .disablePointerEvents{
+         pointer-events: none;
+         border-radius: 50%;
+      }
 
-
+      .disablePointerEventsWhelement{
+         pointer-events: none;
+      }
+      
+      /* about shit was borrowed from w3schools lmao */
     </style>
 </head>
 <body>
     <header>
-        <img src="whale.png" alt="Whale Image">
-        <h1>Whelement</h1>
+        <div>
+          <h1 style="display: inline; vertical-align:middle">Whelement</h1>
+          <img class="disablePointerEventsWhelement" id="whalelelele" src="whelement.svg" width="54"; height="54"; style="display: inline; vertical-align:middle; margin-left: 20px;";>
+      </div>
     </header>
-
-    <hr>
-
-    <!--<p>View crsh1tty: <a href="crsh1tty/index.html">whelement.github.io/crsh1tty/index.html</a></p>-->
-    <a href="crsh1tty"><div style="border:2px solid gray;border-radius:2px;width:30%;height:100%;margin:auto;padding:20px;color:unset;text-decoration:unset;color:initial;"><big style="margin:10px;"><b>CRSH1TTY</b></big><br />Disable WP without opening your chromebook</div></a>
-
-    <hr>
-
-    <h2>Members</h2>
-    <div id="members">
-        <div class="member m1"><img src="pfps/5bfb3694aa2ec4a238a60825cbb10084.webp" style="float: left;" width="20">crossystem<!--<div class="desc d1"><small>hi</small><center><table><tbody><tr><th></th><td>Discord</td><th></th><td><a href="//discord.com/users/1175643738752680030">crossystem</a></td></tr></tbody></table></center></div>--></div><!--someone get this to work-->
-        <div class="member m2"><img src="pfps/2f98d0b201af140e4392ce15364dc889.webp" style="float: left;" width="20">0x90b1</div>
-        <div class="member m3"><img src="pfps/5d6a5e9d7d77ac29116e.png" style="float: left;" width="20">CoolOblivion759</div>
-        <div class="member m4"><img src="pfps/1697e65656e69f0dbdbd.png" style="float: left;" width="20">galaxy</div>
-        <div class="member m5"><img src="pfps/ec7ffe71800e0d009b770df49e36142c.webp" style="float: left;" width="20">OlyB</div>
-        <div class="member m6"><img src="pfps/a9cbe8db3892ad174a95f2746274fcf7.webp" style="float: left;" width="20">Windows XP</div>
-        <div class="member m7"><img src="pfps/0ba68a42b0ad765db85a8d299422ee79.webp" style="float: left;" width="20">boeing 747</div>
-        <div class="member m8"><img src="pfps/20ab5bb338ed330e2f61993c1fb256bc.webp" style="float: left;" width="20">Zeglol1234</div>
-        <div class="member m9"><img src="pfps/8342048b6d00229f43b6c835c083abfb.webp" style="float: left;" width="20">Writable</div>
-        <div class="member m10"><img src="pfps/a19c3ef6b059db38c194084fcdd665ac.webp" style="float: left;" width="20">kxtz</div>
-        <!--<div class="member m11"><img src="pfps/85e2bbbbf3af7ec027345f8a0d2319c5.webp" style="float: left;" width="20">9pfs</div>-->
-        <div class="member m12"><img src="pfps/b954698d2aceeda51c817590681b2c8e.webp" style="float: left;" width="20">Archimax</div> <!-- guess who joined whelement -->
-        <div class="member m13"><img src="pfps/f863b8e693771fa1a25a8927b9bfa161.webp" style="float: left;" width="20">Peap</div>
-        <div class="member m14"><img src="pfps/078fea9958ed839599c94e9659e868d6.webp" style="float: left;" width="20">mammillaria</div>
-        <div class="member m15"><img src="pfps/07d8cb18e607e2d9208210f497e73509.webp" style="float: left;" width="20">Fallenmoon8080</div>
+  <h2 style="text-align: center;">Projects</h3>
+  <div class="row" style="margin-bottom: 82px;">
+    <div class="column">
+      <div class="card" style="border: 2px solid white;">
+        <h1></h1>
+        <div class="container" style="">
+          <h2 style="text-align: center;">CRSH1TTY</h2>
+          <p>Disable WP without opening your chromebook via bruteforcing.</p>
+          <p><button class="button" onclick="window.location.href='crsh1tty/';">More info</button></p>
+        </div>
+      </div>
     </div>
-
-    <h2>Licensed</h2><!--aka contributors, yeah i just took that straight out of MW lol-->
-    <div id="members">
-        <!--<div class="member"><img src="pfps/6f26ddd1bf59740c536d2274bb834a05.png" style="float: left;" width="20">osama</div>-->
-        <div class="member m16"><img src="pfps/184f731f763dd0f0fcc004ecb4c5c53b.webp" style="float: left;" width="20">Oh? On Bob?</div>
+  <div class="column">
+      <div class="card" style="border: 2px solid white;">
+        <h1></h1>
+        <div class="container" style="">
+          <h2 style="text-align: center;">CROSMIDI</h2>
+          <p>An RMA shim bootloader inspired by the popular tool Ventoy.</p>
+          <p><button class="button" onclick="window.location.href='CROSMIDI/';">More info</button></p>
+        </div>
+      </div>
     </div>
-
-    <p>Copyright Whelement, 2023-2024. Source is at <a href="https://github.com/Whelement/Whelement.github.io" target="_blank">github.com/Whelement/Whelement.github.io</a></p>
-    <p>Above is not a legal statement</p>
+  <div class="column">
+      <div class="card" style="border: 2px solid white;">
+        <h1></h1>
+        <div class="container" style="">
+          <h2 style="text-align: center;">sh0vel</h2>
+          <p>Unenroll your chromebook by beating the shit out of it with a shovel. (not actually, more info on this later)</p>
+          <p><button class="button" onclick="window.location.href='sh0vel/';">More info</button></p>
+        </div>
+      </div>
+    </div>
+  <div class="column">
+      <div class="card" style="border: 2px solid white;">
+        <h1></h1>
+        <div class="container" style="">
+          <h2 style="text-align: center;">RMASteam</h2>
+          <p>Custom server spoofing the ones used to authenticate RMA shims.</p>
+          <p><button class="button" onclick="window.location.href='rmasteam/';">More info</button></p>
+        </div>
+      </div>
+    </div>
+  <h2 style="text-align: center;">Members</h3>
+  <div class="row">
+    <!-- When adding more people to credits, copy another person's credit box, which will start with <div class="column" and end with 3 </div>'s. Paste it at the end, and edit it to your liking. -->
+    <div class="column">
+      <div class="card">
+        <h1></h1>
+        <img class="disablePointerEvents" src="pfps/b954698d2aceeda51c817590681b2c8e.webp" alt="Archimax" style="width:10%; display: block;
+          margin-left: auto;
+          margin-right: auto;">
+        <div class="container">
+          <h2 style="text-align: center;">Archimax</h2>
+          <p>14, lead dev of CROSMIDI, interested in chromebooks</p>
+          <p><button class="button" onclick="window.location.href='https://discord.com/users/988950574387068968';">Discord</button></p>
+          <p><button class="button" onclick="window.location.href='https://github.com/EnterTheVoid-x86';">GitHub</button></p>
+          <p><button class="button" onclick="window.location.href='mailto:enterthevoidx86@gmail.com';">Email</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/5bfb3694aa2ec4a238a60825cbb10084.webp" alt="crossystem" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">crossystem</h2>
+              <p>Founder of Whelement, lead developer of CRSH1TTY</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/1175643738752680030';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/chrossystem';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='mailto:unrealgamertwentyo<h1></h1>ne@outlook.com';">Email</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/2f98d0b201af140e4392ce15364dc889.webp" alt="TheTechFrog" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">TheTechFrog</h2>
+              <p style="font-size: 14px;">15, freshman, interested in cybersecurity and programming</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/1060071562595807254';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/TheSpiritOfDark';">GitHub</button></p>
+              <p><button class="button" onclick="enlargeImg()">Whale</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/5d6a5e9d7d77ac29116e.png" alt="CoolOblivion759" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">CoolOblivion759</h2>
+              <p>totally 100% smart and not dumb 👍</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/854374770850398220';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/CoolOblivion759';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/853098590719967242';">Discord Backup</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/1697e65656e69f0dbdbd.png" alt="galaxy" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">galaxy</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/893650678432550942';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/galaxqy';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/853098590719967242';">Discord Backup</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/ec7ffe71800e0d009b770df49e36142c.webp" alt="OlyB" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">OlyB</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/476169716998733834';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/BinBashBanana';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='element://vector/webapp/#/user/%40olyb%3Amatrix.org';">Matrix (Element)</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/a9cbe8db3892ad174a95f2746274fcf7.webp" alt="Windows XP" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">Windows XP</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/693274900731002931';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/legoskid';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='https://www.twitch.tv/bananadatboi';">Twitch</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/0ba68a42b0ad765db85a8d299422ee79.webp" alt="boeing 747" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">boeing 747</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/1037713379780993114';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/notboeing747';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='https://time.is/Canada';">Timezone</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/20ab5bb338ed330e2f61993c1fb256bc.webp" alt="Zeglol1234" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">Zeglol1234</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/1101547649477386331';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/ZeglolTheThirtySixth';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='http://127.0.0.1';">Their IP address</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/8342048b6d00229f43b6c835c083abfb.webp" alt="Writable" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-alignstyle="justify-content: center; display: flex;": center;">Writable</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/1101547649477386331';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/MunyDev';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='https://earth.google.com/web/';">Their current location</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/a19c3ef6b059db38c194084fcdd665ac.webp" alt="kxtz" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">ktxz</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/952792525637312552';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/kxtzownsu';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='mailto:me@kxtz.dev';">Email</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/f863b8e693771fa1a25a8927b9bfa161.webp" alt="Peap" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">Peap</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/769374081991835659';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/Peapgithub';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='https://www.reddit.com/user/Own_Presence2753';">Reddit</button></p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row" style="justify-content: center; display: flex;">
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/078fea9958ed839599c94e9659e868d6.webp" alt="mammillaria" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">mammillaria</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/877222534259540068';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/MrBrain295';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='https://mrbrain295.github.io/';">Website</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/07d8cb18e607e2d9208210f497e73509.webp" alt="Fallenmoon8080" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">Fallenmoon8080</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/1023959858602573966';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/LucRtheL';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='https://reddit.com/user/Fallenmoon8080';">Reddit</button></p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--<h2 style="text-align: center;">Licensed</h3>
+    <div class="row" style="justify-content: center; display: flex;">
+    <div class="column">
+      <div class="card">
+            <h1></h1>
+            <img class="disablePointerEvents" src="pfps/184f731f763dd0f0fcc004ecb4c5c53b.webp" alt="OhOnBob" style="width:10%; display: block;
+              margin-left: auto;
+              margin-right: auto;">
+            <div class="container">
+              <h2 style="text-align: center;">OhOnBob</h2>
+              <p>this is a description</p>
+              <p><button class="button" onclick="window.location.href='https://discord.com/users/877222534259540068';">Discord</button></p>
+              <p><button class="button" onclick="window.location.href='https://github.com/MrBrain295';">GitHub</button></p>
+              <p><button class="button" onclick="window.location.href='https://mrbrain295.github.io/';">Website</button></p>
+        </div>
+      </div>
+    </div>
+    </div>-->
 
     <footer>
-        <p>&copy; Whelement, 2023-2024</p>
-    </footer>
+    <p>© Whelement, 2023-2024</p>
+    <!--<div class="social-media-section"> -->
+      <!-- TikTok -->
+      <!--<a href="https://www.tiktok.com/@androidroms" target="_blank" class="social-link">
+        <img src="soc-media-pics/tiktok.png" alt="TikTok" class="social-icon">
+      </a>-->
+
+      <!-- Discord -->
+      <!--<a href="https://discord.gg/SKvBdpZz" target="_blank" class="social-link">
+        <img src="soc-media-pics/discord.png" alt="Discord" class="social-icon">
+      </a>-->
+    </div>
+  </div>
+  </footer>
+
+  <script>
+        // Get the img object using its Id
+        img = document.getElementById("whalelelele");
+        // Function to increase image size
+        function enlargeImg() {
+            // Set image size to 5 times original
+            img.animate(
+              {
+                transform: ['none', 'rotate(+10turn)'],
+              },
+              {
+                duration: 500,
+                easing: 'cubic-bezier(1, 0, 0, 1)',
+              });
+            }
+        // Function to reset image size
+    </script>
+
+  <style>
+    /* Social media wrapper with a gray background */
+    .social-media-wrapper {
+      background-color: #f0f0f0; /* Use a light gray color */
+      padding: 20px;
+      border-radius: 10px; /* Optional: Add some rounded corners */
+    }
+
+    /* Center-align the social media section */
+    .social-media-section {
+      text-align: center;
+      margin-top: 20px; /* Optional: Adjust the top margin for spacing */
+    }
+
+    /* Style for social media header */
+    .social-media-header {
+      text-align: center;
+      color: #333; /* Text color for contrast */
+      margin-bottom: 10px; /* Optional: Adjust the bottom margin for spacing */
+    }
+
+    /* Style for social media links */
+    .social-link {
+      display: inline-block;
+      margin: 0 15px; /* Adjust spacing between icons */
+      text-decoration: none;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* Style for social media icons */
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #666; /* Use a darker gray color for border */
+      transition: border-color 0.3s ease-in-out;
+    }
+
+    /* Hover effect for social media icons */
+    .social-link:hover .social-icon {
+      border-color: #333; /* Change color on hover */
+      transform: scale(1.1); /* Add a slight scale effect on hover */
+    }
+  </style>
+    <script>
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>
