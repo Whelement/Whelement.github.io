@@ -183,9 +183,9 @@ function Website() {
               src="pfps/zeglol.webp"
               alt="zeglol 1234"
             />
-            <h2 className="text-center font-bold text-xl mb-2">zeglol 1234</h2>
+            <h2 className="text-center font-bold text-xl mb-2">ZeglolTheThirtySixth</h2>
             <p className="text-center mb-4">
-            cheeseburger (admit it I made you hungry)
+            beesechurger
             </p>
             <button
               className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
