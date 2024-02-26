@@ -411,12 +411,12 @@ function Website() {
               src="pfps/cooloblivion.png"
               alt="CoolOblivion759"
             />
-            <h2 className="text-center font-bold text-xl mb-2">Riftriot</h2>
+            <h2 className="text-center font-bold text-xl mb-2">CoolOblivion759</h2>
             <p className="text-center mb-4">
             Ex. Whelement server owner & CRSH1TTY tester
             </p>
             <p>
-            <i>NOTE: CoolOblivion79 has <b>NOT</b> passed away, he has decided to split ways with the Chromebook Exploiting community.</i>
+            <i>NOTE: CoolOblivion759 has <b>NOT</b> passed away, he has decided to split ways with the Chromebook exploiting community.</i>
             </p>
             <button
               className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
