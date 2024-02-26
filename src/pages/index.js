@@ -89,7 +89,7 @@ function Website() {
             />
             <h2 className="text-center font-bold text-xl mb-2">crossystem</h2>
             <p className="text-center mb-4">
-              Founder of Whelement, lead developer of CRSH1TTY
+              16, founder of Whelement, I know too much stuff for my own good
             </p>
             <button
               className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
