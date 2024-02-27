@@ -446,7 +446,7 @@ function Website() {
         <p className="text-green-600 p-2 inline">GitHub</p>
         <p className="p-2 inline">&copy; Whelement, 2023-2024</p>
         <a
-          href="https://discord.gg/pBnscCdXAq"
+          href="https://discord.gg/Vs6CKGS475"
           className="text-blue-500 inline ml-4"
           target="_blank"
           rel="noopener noreferrer"
