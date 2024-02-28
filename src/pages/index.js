@@ -387,13 +387,13 @@ function Website() {
             </button>
             <button
               className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onclick={() => window.location.href = 'https://github.com/Riftriot'}
+              onClick={() => window.location.href = 'https://github.com/Riftriot'}
             >
               Github
             </button>
             <button
               className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onclick={() => window.location.href = 'https://www.youtube.com/watch?v=Sy8nPI85Ih4'}
+              onClick={() => window.location.href = 'https://www.youtube.com/watch?v=Sy8nPI85Ih4'}
             >
               sick ass deadpool clip
             </button>
@@ -426,13 +426,13 @@ function Website() {
             </button>
             <button
               className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onclick={() => window.location.href = 'https:///github.com/CoolOblivion759'}
+              onClick={() => window.location.href = 'https:///github.com/CoolOblivion759'}
             >
               GitHub
             </button>
             <button
               className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onclick={() => window.location.href = 'https://discord.com/users/853098590719967242'}
+              onClick={() => window.location.href = 'https://discord.com/users/853098590719967242'}
             >
               Discord Backup
             </button>
