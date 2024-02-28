@@ -387,15 +387,15 @@ function Website() {
             </button>
             <button
               className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onclick={() => window.location.href = 'https:///google.com'}
+              onclick={() => window.location.href = 'https://github.com/Riftriot'}
             >
-              Contact Infoer
+              Github
             </button>
             <button
               className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onclick={() => window.location.href = 'https:///google.com'}
+              onclick={() => window.location.href = 'https://www.youtube.com/watch?v=Sy8nPI85Ih4'}
             >
-              Contact Info
+              sick ass deadpool clip
             </button>
             
           </div>
