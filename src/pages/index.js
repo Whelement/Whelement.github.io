@@ -340,7 +340,7 @@ function Website() {
           <div className="outline-dotted outline-2 outline-white p-4">
             <img
               className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/evelyn344.png"
+              src="pfps/evelyn344.webp"
               alt="Evelyn344"
             />
             <h2 className="text-center font-bold text-xl mb-2">Evelyn344</h2>
