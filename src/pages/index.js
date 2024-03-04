@@ -303,7 +303,38 @@ function Website() {
             </button>
           </div>
         </div>
-
+        <div className="w-1/4 p-4 mb-8 pb-8">
+          <div className="outline-dotted outline-2 outline-white p-4">
+            <img
+              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
+              src="pfps/writable.webp"
+              alt="Writable"
+            />
+            <h2 className="text-center font-bold text-xl mb-2">Writable</h2>
+            <p className="text-center mb-4">
+            the yapping machine
+            </p>
+            <button
+              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
+              onClick={() => window.location.href = 'https://discord.com/users/1101547649477386331'}
+            >
+              Discord
+            </button>
+            <button
+              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
+              onClick={() => window.location.href = 'https://github.com/MunyDev'}
+            >
+              Github
+            </button>
+            <button
+              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
+              onClick={() => window.location.href = 'https://earth.google.com/web/'}
+            >
+              Their current location
+            </button>
+            
+          </div>
+        </div>
         <div className="w-1/4 p-4 mb-8 pb-8">
           <div className="outline-dotted outline-2 outline-white p-4">
             <img
@@ -340,7 +371,7 @@ function Website() {
           <div className="outline-dotted outline-2 outline-white p-4">
             <img
               className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/evelyn344.webp"
+              src="pfps/evelyn344.png"
               alt="Evelyn344"
             />
             <h2 className="text-center font-bold text-xl mb-2">Evelyn344</h2>
@@ -400,6 +431,100 @@ function Website() {
             
           </div>
         </div>
+        <div className="w-1/4 p-4 mb-8 pb-8">
+          <div className="outline-dotted outline-2 outline-white p-4">
+            <img
+              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
+              src="pfps/crystals.png"
+              alt="Crystals"
+            />
+            <h2 className="text-center font-bold text-xl mb-2">Crystals</h2>
+            <p className="text-center mb-4">
+            Description
+            </p>
+            <button
+              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
+              onClick={() => window.location.href = 'https://discord.com/users/709113728226033734'}
+            >
+              Discord
+            </button>
+            <button
+              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
+              onClick={() => window.location.href = 'mailto:crystals@crazycrystals.tech'}
+            >
+              Email
+            </button>
+            <button
+              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
+              onClick={() => window.location.href = 'https://omada.cafe/contact/crystals/'}
+            >
+              Contact Info
+            </button>
+          </div>
+        </div>
+        <div className="w-1/4 p-4 mb-8 pb-8">
+          <div className="outline-dotted outline-2 outline-white p-4">
+            <img
+              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
+              src="pfps/akane.png"
+              alt="Akane"
+            />
+            <h2 className="text-center font-bold text-xl mb-2">Akane</h2>
+            <p className="text-center mb-4">
+            Description
+            </p>
+            <button
+              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
+              onClick={() => window.location.href = 'https://discord.com/users/1052016750486638613'}
+            >
+              Discord
+            </button>
+            <button
+              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
+              onClick={() => window.location.href = 'https://google.com'}
+            >
+              Google
+            </button>
+            <button
+              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
+              onClick={() => window.location.href = 'https://whelement.github.io/'}
+            >
+              Check out the other website
+            </button>
+          </div>
+        </div>
+        <div className="w-1/4 p-4 mb-8 pb-8">
+          <div className="outline-dotted outline-2 outline-white p-4">
+            <img
+              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
+              src="pfps/entrpix.png"
+              alt="entrpix"
+            />
+            <h2 className="text-center font-bold text-xl mb-2">Entrpix</h2>
+            <p className="text-center mb-4">
+            My thoughts will follow you into your dreams.
+            </p>
+            <button
+              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
+              onClick={() => window.location.href = 'https://discord.com/users/1168045766770696193'}
+            >
+              Discord
+            </button>
+            <button
+              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
+              onClick={() => window.location.href = 'https://github.com/Entrpix'}
+            >
+              Github
+            </button>
+            <button
+              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
+              onClick={() => window.location.href = 'https://entrpix.me/'}
+            >
+              Website
+            </button>
+            
+          </div>
+        </div>
       </div>
 
       <h2 className="text-center font-bold text-2xl py-4">Gone but not forgotten. o7</h2>
@@ -443,7 +568,14 @@ function Website() {
       
 
       <footer className="bg-gray-900 py-2 text-center fixed bottom-0 w-full p-3">
-        <p className="text-green-600 p-2 inline">GitHub</p>
+      <a
+          href="https://github.com/Whelement"
+          className="text-green-600 inline ml-4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
         <p className="p-2 inline">&copy; Whelement, 2023-2024</p>
         <a
           href="https://discord.gg/Vs6CKGS475"
