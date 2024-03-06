@@ -75,6 +75,20 @@ function Website() {
             </button>
           </div>
         </div>
+        <div className="w-1/4 p-4">
+          <div className="border border-white p-4">
+            <h2 className="text-center font-bold text-xl mb-2">Tr3nch</h2>
+            <p className="text-center mb-4">
+            A swamp-like exploit utilizing sh0vel, Coming Soon
+            </p>
+            <button
+              className="w-full bg-gray-900 hover:bg-gray-700 text-white h-8"
+              onClick={() => alert("Tr3nch: WIP")}
+            >
+              More info
+            </button>
+          </div>
+        </div>
 
       </div>
       <h2 className="text-center font-bold text-2xl py-4">Members</h2>
