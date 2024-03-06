@@ -185,7 +185,7 @@ function Website() {
             />
             <h2 className="text-center font-bold text-xl mb-2">ZeglolTheThirtySixth</h2>
             <p className="text-center mb-4">
-            beesechurger
+            14, chromebook enthusiast, honorary firmware smasher
             </p>
             <button
               className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
