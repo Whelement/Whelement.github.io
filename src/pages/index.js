@@ -417,38 +417,6 @@ function Website() {
           <div className="outline-dotted outline-2 outline-white p-4">
             <img
               className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/riftriot.png"
-              alt="riftriot"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">Riftriot</h2>
-            <p className="text-center mb-4">
-            15, programmer, play ultrakill sometimes
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/578375908247863296'}
-            >
-              Discord
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://github.com/Riftriot'}
-            >
-              Github
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://www.youtube.com/watch?v=Sy8nPI85Ih4'}
-            >
-              sick ass deadpool clip
-            </button>
-            
-          </div>
-        </div>
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
               src="pfps/akane.png"
               alt="Akane"
             />
