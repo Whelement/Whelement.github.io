@@ -449,37 +449,6 @@ function Website() {
           <div className="outline-dotted outline-2 outline-white p-4">
             <img
               className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/crystals.png"
-              alt="Crystals"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">Crystals</h2>
-            <p className="text-center mb-4">
-            Description
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/709113728226033734'}
-            >
-              Discord
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'mailto:crystals@crazycrystals.tech'}
-            >
-              Email
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://omada.cafe/contact/crystals/'}
-            >
-              Contact Info
-            </button>
-          </div>
-        </div>
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
               src="pfps/akane.png"
               alt="Akane"
             />
