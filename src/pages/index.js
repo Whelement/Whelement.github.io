@@ -390,7 +390,7 @@ function Website() {
             />
             <h2 className="text-center font-bold text-xl mb-2">Evelyn344</h2>
             <p className="text-center mb-4">
-            "who needs a description :З"
+            Meow? (Waiting for something to happen?)
             </p>
             <button
               className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
