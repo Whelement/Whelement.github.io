@@ -394,7 +394,7 @@ function Website() {
             </p>
             <button
               className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/1174368896271257643'}
+              onClick={() => window.location.href = 'https://discord.com/users/402529533900881930'}
             >
               Discord
             </button>
