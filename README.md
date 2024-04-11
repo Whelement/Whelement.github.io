@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Whelement
 Whelement is a programming group that mostly focuses on creating exploits & tools relating to Chromebooks and the ChromeOS operating system.
 
@@ -8,5 +7,5 @@ Whelement is a programming group that mostly focuses on creating exploits & tool
 # Whelement website
 Whelement's official website. Hosts info on members and public exploits.
 
-Check out [our new domain (and upcoming reactjs rewrite)](https://whelement.me)
+Check out [our new domain, writen using the `reactjs` branch](https://whelement.me)
 >>>>>>> main
