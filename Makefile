@@ -1,11 +1,11 @@
 all: build test
 
 test:
-	npm start
+	pnpm run start
 
 build:
-	npm run build
+	pnpm run build
 
 prod:
-	echo "You must have `serve` installed via npm"
+	echo "You must have `serve` installed via pnpm i serve"
 	serve -g build

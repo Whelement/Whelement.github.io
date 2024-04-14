@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 function Website() {
   const imgRef = useRef(null);
 
-  // Function to increase image size
+  // you spin me right round baby right round
   const enlargeImg = () => {
     if (imgRef.current) {
       imgRef.current.classList.add('animate-spin-fast-once');
