@@ -1,5 +1,108 @@
 import React, { useRef } from 'react';
 
+/* Usage: 
+<Button 
+  text="Example Text" 
+  link="https://example.com" 
+/>
+*/
+
+function Button({ text = 'Link', link }) {
+  return (
+    <a href={link}>
+      <button
+        className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
+      >
+        {text} 
+      </button>
+    </a>
+  );
+}
+
+/* Usage:
+<User
+  name="Example Name"
+  description="Description"
+  buttonNames={["button1", "button2", "button3"]}
+  buttonLinks={
+    [
+      "link1",
+      "link2",
+      "link3"
+    ]
+  }
+/>
+*/
+function User({ name, description, buttonNames, buttonLinks }) {
+  const formattedName = name.replace(/\s/g, '');
+
+  return (
+    <div className="w-1/4 p-4 mb-8 pb-8">
+      <div className="outline-dotted outline-2 outline-white p-4">
+        <img
+          className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
+          src={`pfps/${formattedName.toLowerCase()}.png`}
+          alt={name}
+        />
+        <h2 className="text-center font-bold text-xl mb-2">{name}</h2>
+        <p className="text-center mb-4">{description}</p>
+        <div className="text-center">
+          {buttonNames.map((buttonName, index) => (
+            <Button key={index} text={buttonName} link={buttonLinks[index]} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* Usage:
+<Project
+  name="Example"
+  description="Example"
+  link="example.com"
+/>
+*/
+
+function Project({ name, description, link }) {
+  return (
+    <div className="w-1/4 p-4">
+      <div className="border border-white p-4">
+        <h2 className="text-center font-bold text-xl mb-2">{name}</h2>
+        <p className="text-center mb-4">{description}</p>
+        <Button text="More info" link={link} />
+      </div>
+    </div>
+  );
+}
+
+/* Usage:
+
+  <Section name="ExampleMembers">
+    <User
+      name="Example Name"
+      description="Description"
+      buttonNames={["button1", "button2", "button3"]}
+      buttonLinks={[
+          "link1",
+          "link2",
+          "link3"
+      ]}
+    />
+  </Section>
+
+*/
+function Section({ name, children }) {
+  return (
+    <div>
+      <h2 className="text-center font-bold text-2xl py-4">{name}</h2>
+      <div className="flex flex-wrap justify-center">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 function Website() {
   const imgRef = useRef(null);
 
@@ -14,7 +117,10 @@ function Website() {
   };
 
   return (
-    <div className=" font-medium font-Space bg-gray-800 text-white min-h-screen">
+    <div className="font-medium font-Space bg-gray-800 text-white min-h-screen">
+    {/*               ^- This line is the start of <body> basically -^          */}
+
+ 
       <header className="bg-header  font-bold py-4 text-center">
         <div className="flex items-center justify-center">
           <h1 className="inline text-4xl">Whelement</h1>
@@ -23,503 +129,172 @@ function Website() {
             alt="Whelement Logo"
             className="w-14 h-14 ml-4"
             id="whalelelele"
-            ref={imgRef}
-
-          />
+            ref={imgRef} />
         </div>
       </header>
-      <h2 className="text-center font-bold text-2xl py-4">Projects</h2>
-      <div className="flex flex-wrap justify-center">
 
-        <div className="w-1/4 p-4">
-          <div className="border border-white p-4">
-            <h2 className="text-center font-bold text-xl mb-2">CRSH1TTY (deprecated)</h2>
-            <p className="text-center mb-4">
-              Disable WP without opening your chromebook via bruteforcing.
-            </p>
-            <button
-              className="w-full bg-gray-900 hover:bg-gray-700 text-white h-8"
-              onClick={() => window.location.href = 'crsh1tty/'}
-            >
-              More info
-            </button>
-          </div>
-        </div>
+      <Section name="Projects">
+        <Project
+          name="CRSH1TTY"
+          description="Disable WP without opening your chromebook via bruteforcing."
+          link="/crsh1tty/" />
 
-        <div className="w-1/4 p-4">
-          <div className="border border-white p-4">
-            <h2 className="text-center font-bold text-xl mb-2">CROSMIDI</h2>
-            <p className="text-center mb-4">
-              An RMA shim bootloader inspired by the popular tool Ventoy.
-            </p>
-            <button
-              className="w-full bg-gray-900 hover:bg-gray-700 text-white h-8"
-              onClick={() => alert("CROSMIDI: WIP")}
-            >
-              More info
-            </button>
-          </div>
-        </div>
+        <Project
+          name="CROSMIDI"
+          description="An RMA shim bootloader inspired by the popular tool Ventoy."
+          link="javascript:alert('CROSMIDI: WIP');" />
 
-        <div className="w-1/4 p-4">
-          <div className="border border-white p-4">
-            <h2 className="text-center font-bold text-xl mb-2">sh0vel</h2>
-            <p className="text-center mb-4">
-            Run javascript code on almost any URL with full chrome API access.
-            </p>
-            <button
-              className="w-full bg-gray-900 hover:bg-gray-700 text-white h-8"
-              onClick={() => alert("sh0vel: WIP")}
-            >
-              More info
-            </button>
-          </div>
-        </div>
-        <div className="w-1/4 p-4">
-          <div className="border border-white p-4">
-            <h2 className="text-center font-bold text-xl mb-2">Tr3nch</h2>
-            <p className="text-center mb-4">
-            A swamp-like exploit utilizing sh0vel, Coming Soon
-            </p>
-            <button
-              className="w-full bg-gray-900 hover:bg-gray-700 text-white h-8"
-              onClick={() => alert("Tr3nch: WIP")}
-            >
-              More info
-            </button>
-          </div>
-        </div>
+        <Project
+          name="sh0vel"
+          description="Run javascript code on almost any URL with full chrome API access."
+          link="javascript:alert('sh0vel: WIP');" />
 
-      </div>
-      <h2 className="text-center font-bold text-2xl py-4">Members</h2>
-      <div className="flex flex-wrap justify-center">
+        <Project
+          name="Tr3nch"
+          description="A swamp-like exploit utilizing sh0vel, Coming Soon. May 6th, 2024."
+          link="javascript:alert('Tr3nch: May 6th, 2024.');" />
 
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/crossystem.png"
-              alt="crossystem"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">crossystem</h2>
-            <p className="text-center mb-4">
-              16, founder of Whelement, I know too much stuff for my own good
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/1175643738752680030'}
-            >
-              Discord
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://github.com/chrossystem'}
-            >
-              GitHub
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'mailto:crossedstem@gmail.com'}
-            >
-              Email
-            </button>
-          </div>
-        </div>
+      </Section>
 
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/thetechfrog.webp"
-              alt="The Tech Frog"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">TheTechFrog</h2>
-            <p className="text-center mb-4">
-            15, interested in cybersecurity, whelement's unlicensed therapist
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/1060071562595807254'}
-            >
-              Discord
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://github.com/TheSpiritOfDark'}
-            >
-              GitHub
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={enlargeImg}
-            >
-              Whale
-            </button>
-          </div>
-        </div>
-        
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/boeing747.webp"
-              alt="boeing 747"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">boeing 747</h2>
-            <p className="text-center mb-4">
-            i exist
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/1037713379780993114'}
-            >
-              Discord
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://github.com/notboeing747'}
-            >
-              GitHub
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://time.is/Canada'}
-            >
-              Timezone
-            </button>
-          </div>
-        </div>
+      <Section name="Members">
 
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/zeglol.png"
-              alt="zeglol 1234"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">ZeglolTheThirtySixth</h2>
-            <p className="text-center mb-4">
-            14, chromebook enthusiast, honorary firmware smasher
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/1101547649477386331'}
-            >
-              Discord
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://github.com/ZeglolTheThirtySixth'}
-            >
-              GitHub
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'http://127.0.0.1'}
-            >
-              Their IP Address
-            </button>
-          </div>
-        </div>
+        <User
+          name="Kelsea"
+          description="16, founder of Whelement, avid Hololive enjoyer, pronounced 'kraws sis-tuhm' not 'kraw-see stem'"
+          buttonNames={["Discord", "GitHub", "Steam"]}
+          buttonLinks={[
+            "https://discord.com/users/1175643738752680030",
+            "https://github.com/chrossystem",
+            "https://steamcommunity.com/profiles/76561199021462166"
+          ]} />
 
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/galaxy.webp"
-              alt="galaxy"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">galaxy</h2>
-            <p className="text-center mb-4">
-            i do stuff ocassionally
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/893650678432550942'}
-            >
-              Discord
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://github.com/galaxqy'}
-            >
-              GitHub
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/853098590719967242'}
-            >
-              Discord Backup
-            </button>
-          </div>
-        </div>
 
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/archimax.webp"
-              alt="Archimax"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">Archimax</h2>
-            <p className="text-center mb-4">
-            14, lead dev of CROSMIDI, interested in chromebooks
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/988950574387068968'}
-            >
-              Discord
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://github.com/EnterTheVoid-x86'}
-            >
-              GitHub
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'mailto:enterthevoidx86@gmail.com'}
-            >
-              Email
-            </button>
-          </div>
-        </div>
+        <User
+          name="TheTechFrog"
+          description="15, interested in cybersecurity, whelement's unlicensed therapist"
+          buttonNames={["Discord", "GitHub", "Whale"]}
+          buttonLinks={[
+            "https://discord.com/users/1060071562595807254",
+            "https://github.com/TheSpiritOfDark",
+            "javascript:enlargeImg()"
+          ]} />
+        <User
+          name="boeing 747"
+          description="i exist"
+          buttonNames={["Discord", "GitHub", "Timezone"]}
+          buttonLinks={[
+            "https://discord.com/users/1037713379780993114",
+            "https://github.com/notboeing747",
+            "https://time.is/Canada"
+          ]} />
+        <User
+          name="ZeglolTheThirtySixth"
+          description="14, chromebook enthusiast, honorary firmware smasher"
+          buttonNames={["Discord", "GitHub", "Their IP Address"]}
+          buttonLinks={[
+            "https://discord.com/users/1101547649477386331",
+            "https://github.com/ZeglolTheThirtySixth",
+            "http://127.0.0.1"
+          ]} />
+        <User
+          name="galaxy"
+          description="i do stuff ocassionally"
+          buttonNames={["Discord", "GitHub", "Discord Backup"]}
+          buttonLinks={[
+            "https://discord.com/users/893650678432550942",
+            "https://github.com/galaxqy",
+            "https://discord.com/users/853098590719967242"
+          ]} />
 
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/olyb.webp"
-              alt="OlyB"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">OlyB</h2>
-            <p className="text-center mb-4">
-            Owner of TitaniumNetwork, Professional Firmware Smasher
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/476169716998733834'}
-            >
-              Discord
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://github.com/BinBashBanana'}
-            >
-              GitHub
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'element://vector/webapp/#/user/%40olyb%3Amatrix.org'}
-            >
-              Matrix (Element)
-            </button>
-          </div>
-        </div>
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/writable.webp"
-              alt="Writable"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">Writable</h2>
-            <p className="text-center mb-4">
-            the yapping machine
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/1101547649477386331'}
-            >
-              Discord
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://github.com/MunyDev'}
-            >
-              Github
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://earth.google.com/web/'}
-            >
-              Their current location
-            </button>
-            
-          </div>
-        </div>
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/kxtz.png"
-              alt="kxtz"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">kxtz</h2>
-            <p className="text-center mb-4">
-            14, basic frontend dev, i use arch btw, Professional Firmware Smasher
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/'}
-            >
-              Discord
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://github.com/kxtzownsu'}
-            >
-              GitHub
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'mailto:me@kxtz.dev'}
-            >
-              Email
-            </button>
-          </div>
-        </div>
+        <User
+          name="Archimax"
+          description="14, lead dev of CROSMIDI, interested in chromebooks"
+          buttonNames={["Discord", "GitHub", "Email"]}
+          buttonLinks={[
+            "https://discord.com/users/988950574387068968",
+            "https://github.com/EnterTheVoid-x86",
+            "mailto:enterthevoidx86@gmail.com"
+          ]}
+        />
 
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/evelyn344.png"
-              alt="Evelyn344"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">Evelyn344</h2>
-            <p className="text-center mb-4">
-            Meow? (Waiting for something to happen?)
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/402529533900881930'}
-            >
-              Discord
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://github.com/Evelyn3440'}
-            >
-              GitHub
-            </button>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'mailto:evelyn@whelement.me'}
-            >
-              Email
-            </button>
-          </div>
-        </div>
+        <User
+          name="OlyB"
+          description="Owner of TitaniumNetwork, Professional Firmware Smasher"
+          buttonNames={["Discord", "GitHub", "Matrix (Element)"]}
+          buttonLinks={[
+            "https://discord.com/users/476169716998733834",
+            "https://github.com/BinBashBanana",
+            "element://vector/webapp/#/user/%40olyb%3Amatrix.org"
+          ]}
+        />
 
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/akane.png"
-              alt="Akane"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">Akane</h2>
-            <p className="text-center mb-4">
-            Description
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/1052016750486638613'}
-            >
-              Discord
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://google.com'}
-            >
-              Google
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://whelement.github.io/'}
-            >
-              Check out the other website
-            </button>
-          </div>
-        </div>
-        <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/entrpix.png"
-              alt="entrpix"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">Entrpix</h2>
-            <p className="text-center mb-4">
-            My thoughts will follow you into your dreams.
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/1168045766770696193'}
-            >
-              Discord
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://github.com/Entrpix'}
-            >
-              Github
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://entrpix.me/'}
-            >
-              Website
-            </button>
-            
-          </div>
-        </div>
-      </div>
+        <User
+          name="Writable"
+          description="the yapping machine"
+          buttonNames={["Discord", "GitHub", "Their current location"]}
+          buttonLinks={[
+            "https://discord.com/users/1101547649477386331",
+            "https://github.com/MunyDev",
+            "https://earth.google.com/web/"
+          ]}
+        />
 
-      <h2 className="text-center font-bold text-2xl py-4">Gone but not forgotten. o7</h2>
-      <div className="flex flex-wrap justify-center">
-      <div className="w-1/4 p-4 mb-8 pb-8">
-          <div className="outline-dotted outline-2 outline-white p-4">
-            <img
-              className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-              src="pfps/cooloblivion.png"
-              alt="CoolOblivion759"
-            />
-            <h2 className="text-center font-bold text-xl mb-2">CoolOblivion759</h2>
-            <p className="text-center mb-4">
-            Ex. Whelement server owner & CRSH1TTY tester
-            </p>
-            <p>
-            <i>NOTE: CoolOblivion759 has <b>NOT</b> passed away, he has decided to split ways with the Chromebook exploiting community.</i>
-            </p>
-            <button
-              className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
-              onClick={() => window.location.href = 'https://discord.com/users/854374770850398220'}
-            >
-              Discord
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https:///github.com/CoolOblivion759'}
-            >
-              GitHub
-            </button>
-            <button
-              className='w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3'
-              onClick={() => window.location.href = 'https://discord.com/users/853098590719967242'}
-            >
-              Discord Backup
-            </button>
-            
-          </div>
-        </div>
-      </div>
-      
+        <User
+          name="kxtz"
+          description="14, basic frontend dev, i use arch btw, Professional Firmware Smasher"
+          buttonNames={["Discord", "GitHub", "Email"]}
+          buttonLinks={[
+            "https://discord.com/users/952792525637312552",
+            "https://github.com/kxtzownsu",
+            "mailto:me@kxtz.dev"
+          ]}
+        />
 
+        <User
+          name="Evelyn344"
+          description="Meow? (Waiting for something to happen?)"
+          buttonNames={["Discord", "GitHub", "Email"]}
+          buttonLinks={[
+            "https://discord.com/users/402529533900881930",
+            "https://github.com/Evelyn3440",
+            "mailto:evelyn@whelement.me"
+          ]}
+        />
+
+        <User
+          name="Akane"
+          description="Description"
+          buttonNames={["Discord", "Google", "Check out the other website"]}
+          buttonLinks={[
+            "https://discord.com/users/1052016750486638613",
+            "https://google.com",
+            "https://legacy.whelement.me"
+          ]}
+        />
+
+        <User
+          name="Entrpix"
+          description="My thoughts will follow you into your dreams."
+          buttonNames={["Discord", "Github", "Website"]}
+          buttonLinks={[
+           "https://discord.com/users/1168045766770696193",
+           "https://github.com/Entrpix",
+           "https://entrpix.me/"
+          ]}
+        />
+
+      </Section>
+
+      <Section name="Gone but not forgotten. o7">
+        <User
+          name="CoolOblivion759"
+          description="Ex. Whelement server owner & CRSH1TTY tester, NOTE: CoolOblivion759 has NOT passed away, he has decided to split ways with the Chromebook exploiting community."
+          buttonNames={[]}
+          buttonLinks={[]}
+        />
+      </Section>
       <footer className="bg-gray-900 py-2 text-center fixed bottom-0 w-full p-3">
-      <a
+        <a
           href="https://github.com/Whelement"
           className="text-green-600 inline ml-4"
           target="_blank"
@@ -540,5 +315,6 @@ function Website() {
     </div>
   );
 }
+
 
 export default Website;
