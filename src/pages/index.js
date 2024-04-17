@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-script-url */
 import React, { useRef } from 'react';
 
 /* Usage: 
