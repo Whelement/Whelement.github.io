@@ -16,7 +16,7 @@ function crsh1tty() {
           <h2 className="text-3xl mb-2 glow-white">Instructions</h2>
           <p>On an <b>UNENROLLED CHROMEBOOK IN DEVMODE</b> with <b>WP</b> and <b>WIFI ON</b> run this code in vt2, and just wait!</p>
           <div className="flex items-center justify-center w-2/3 h-full bg-gray-600 text-gray-200 rounded p-2 mb-2 mx-auto">
-            <p>cd /home/chronos/user/Downloads && curl -Lk https://raw.githubusercontent.com/Whelement/CRSH1TTY-public-beta/main/crsh1ttyb3.sh -o ./crsh1ttyb3.sh && bash ./crsh1ttyb3.sh</p>
+            <p>curl -s https://raw.githubusercontent.com/Whelement/Whelement.github.io/main/scripts/crsh1tty.sh | bash</p>
           </div>
         </section>
         <section className="mb-5">
