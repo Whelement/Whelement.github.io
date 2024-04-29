@@ -274,17 +274,6 @@ function Website() {
           ]}
         />
 
-        <User
-          name="Entrpix"
-          description="My thoughts will follow you into your dreams."
-          buttonNames={["Discord", "Github", "Website"]}
-          buttonLinks={[
-           "https://discord.com/users/1168045766770696193",
-           "https://github.com/Entrpix",
-           "https://entrpix.me/"
-          ]}
-        />
-
       </Section>
 
       <Section name="Gone but not forgotten. o7">
