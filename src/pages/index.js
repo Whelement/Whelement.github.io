@@ -198,15 +198,6 @@ function Website() {
             "https://github.com/ZeglolTheThirtySixth",
             "http://127.0.0.1"
           ]} />
-        <User
-          name="galaxy"
-          description="i do stuff ocassionally"
-          buttonNames={["Discord", "GitHub", "Discord Backup"]}
-          buttonLinks={[
-            "https://discord.com/users/893650678432550942",
-            "https://github.com/galaxqy",
-            "https://discord.com/users/853098590719967242"
-          ]} />
 
         <User
           name="Archimax"
