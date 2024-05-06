@@ -156,7 +156,7 @@ function Website() {
         <Project
           name="Tr3nch"
           description="A swamp-like exploit utilizing sh0vel, Coming Soon. May 6th, 2024."
-          link="javascript:alert('Tr3nch: May 6th, 2024.');" />
+          link="/tr3nch/" />
 
       </Section>
 
