@@ -256,17 +256,6 @@ function Website() {
           ]}
         />
 
-        <User
-          name="Akane"
-          description="Description"
-          buttonNames={["Discord", "Google", "Check out the other website"]}
-          buttonLinks={[
-            "https://discord.com/users/1052016750486638613",
-            "https://google.com",
-            "https://legacy.whelement.me"
-          ]}
-        />
-
       </Section>
 
       <Section name="Gone but not forgotten. o7">
