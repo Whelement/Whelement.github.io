@@ -1,10 +1,4 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities"; 
-
-
 body {
-    font-family: "Space Grotesk", serif;
     margin: 0;
     padding: 0;
     background: #1d2936;

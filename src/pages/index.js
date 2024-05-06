@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-script-url */
 import React, { useRef } from 'react';
+import '../index.css';
+import '../tailwind.css';
 
 /* Usage: 
 <Button 
@@ -119,7 +121,7 @@ function Website() {
   };
 
   return (
-    <div className="font-medium font-Space bg-gray-800 text-white min-h-screen">
+    <div className="font-medium font-mono bg-gray-800 text-white min-h-screen">
     {/*               ^- This line is the start of <body> basically -^          */}
 
  

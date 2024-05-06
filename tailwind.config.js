@@ -12,7 +12,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        'Space ': ['"Space Grotesk"', 'serif'] // Ensure fonts with spaces have " " surrounding it.
+        'Space ': ['"Space Grotesk"', 'serif'],
+        'mono ': ['"Space Mono"', 'monospace']
       },
     },
     variants: {
