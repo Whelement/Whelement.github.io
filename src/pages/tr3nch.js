@@ -105,7 +105,7 @@ function Tr3nchGuide(){
 					A new window should appear. In the search bar in the top, search for "extensions-on-chrome-urls". A single flag should appear, click the box set it to enabled. If prompted to, click the restart button.<br /><br />
 
 					Once the flag has been set, do not disable it. You will only have to enable it once for this to work persistently. Now, you have some options. There are a lot of pages you can choose to run Tr3nch on, each with
-					their own capabilities. Some of the most powerful URLs are <b>chrome://os-settings, chrome://setttings, chrome://extensions, chrome://chrome-signin, chrome://inspect, chrome://file-manager, chrome://network, and chrome://oobe</b> (chrome://oobe most likely
+					their own capabilities. Some of the most powerful URLs are <b>chrome://os-settings, chrome://settings, chrome://extensions, chrome://chrome-signin, chrome://inspect, chrome://file-manager, chrome://network, and chrome://oobe</b> (chrome://oobe most likely
 					won't work for you, if it doesn't do not make an issue, this is not fixable!).<br /><br />
 
 					Open of those URLs in a new tab, and while viewing it, click the icon of the extension you injected Tr3nch into (if it isn't in the top right, check the puzzle piece icon). If done successfully, Tr3nch should load in instantly.<br /><br />
