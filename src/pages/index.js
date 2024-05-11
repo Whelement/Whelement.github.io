@@ -164,7 +164,7 @@ function Website() {
 
         <User
           name="Kelsea"
-          description="16, founder of Whelement, avid Hololive enjoyer, pronounced 'kraws sis-tuhm' not 'kraw-see stem'"
+          description="16, Whelement's founder, I like Arch and love Hololive"
           buttonNames={["Discord", "GitHub", "Steam"]}
           buttonLinks={[
             "https://discord.com/users/1175643738752680030",
