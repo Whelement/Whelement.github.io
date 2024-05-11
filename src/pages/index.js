@@ -180,7 +180,7 @@ function Website() {
           buttonLinks={[
             "https://discord.com/users/1060071562595807254",
             "https://github.com/TheSpiritOfDark",
-            "javascript:enlargeImg()"
+            `javascript:img = document.getElementById("whalelelele"); function youSpinMeRightRoundBabyRightRound() { img.animate( { transform: ['none', 'rotate(+10turn)'], }, { duration: 500, easing: 'cubic-bezier(1, 0, 0, 1)', }); }; youSpinMeRightRoundBabyRightRound();`
           ]} />
         <User
           name="boeing 747"
@@ -236,7 +236,7 @@ function Website() {
 
         <User
           name="kxtz"
-          description="14, basic frontend dev, i use arch btw, Professional Firmware Smasher"
+          description="15, basic frontend dev, i use arch btw, python, js and rust are my languages of choice"
           buttonNames={["Discord", "GitHub", "Email"]}
           buttonLinks={[
             "https://discord.com/users/952792525637312552",

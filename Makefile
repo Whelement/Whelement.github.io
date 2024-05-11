@@ -1,4 +1,4 @@
-all: build test
+all: build prod
 
 test:
 	pnpm run start
