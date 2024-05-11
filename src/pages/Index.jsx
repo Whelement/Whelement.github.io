@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-script-url */
-import React, { useRef } from 'react';
-import '../index.css';
+import { useRef } from 'preact/hooks';
 import '../tailwind.css';
+import '../index.css';
 
 /* Usage: 
 <Button 
@@ -15,7 +15,7 @@ function Button({ text = 'Link', link }) {
   return (
     <a href={link}>
       <button
-        className="w-full h-8 bg-gray-900 hover:bg-gray-700 text-white mb-3"
+        className="w-full h-8 font-normal bg-gray-900 hover:bg-gray-700 text-white mb-3"
       >
         {text} 
       </button>
@@ -42,7 +42,7 @@ function User({ name, description, buttonNames, buttonLinks }) {
 
   return (
     <div className="w-1/4 p-4 mb-8 pb-8">
-      <div className="outline-dotted outline-2 outline-white p-4">
+      <div className="outline-dotted outline-2 outline-offset-2 outline-white p-4">
         <img
           className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
           src={`pfps/${formattedName.toLowerCase()}.png`}
@@ -107,25 +107,14 @@ function Section({ name, children }) {
   );
 }
 
-function Website() {
-  const imgRef = useRef(null);
-
-  // you spin me right round baby right round
-  const enlargeImg = () => {
-    if (imgRef.current) {
-      imgRef.current.classList.add('animate-spin-fast-once');
-      setTimeout(() => {
-        imgRef.current.classList.remove('animate-spin-fast-once');
-      }, 1000);
-    }
-  };
+export function Website() {
 
   return (
     <div className="font-medium font-mono bg-gray-800 text-white min-h-screen">
     {/*               ^- This line is the start of <body> basically -^          */}
 
  
-      <header className="bg-header  font-bold py-4 text-center">
+      <header className="bg-header font-bold py-4 text-center">
         <div className="flex items-center justify-center">
           <h1 className="inline text-4xl">Whelement</h1>
           <img
@@ -133,7 +122,7 @@ function Website() {
             alt="Whelement Logo"
             className="w-14 h-14 ml-4"
             id="whalelelele"
-            ref={imgRef} />
+          />
         </div>
       </header>
 
@@ -288,6 +277,3 @@ function Website() {
     </div>
   );
 }
-
-
-export default Website;

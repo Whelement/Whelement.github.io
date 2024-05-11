@@ -1,18 +1,19 @@
+import '../tailwind.css';
 import '../tr3nch.css';
 
-function Tr3nchGuide(){
+export function Tr3nchGuide(){
     return(
         <div className="text-white font-mono">
             <div className="topBar">
 			    <h1 className="text-4xl">Tr3nch Setup Guide</h1>
 			    <p>Written with love by Hannah (Zeglol1234)</p>
-				<p>Ported to ReactJS by Katelyn (kxtzownsu)</p>
+				<p>Ported to PreactJS+Tailwind by Katelyn (kxtzownsu)</p>
 		    </div>
 		    <div className="content">
 		    	<div className="crop">
 	    			<h1 className="text-4xl">Finding Sh0vel</h1>
 	    			<hr />
-	    			<p>
+	    			<p className="text-md">
 		    			First thing's first, we need to find an installable extension that is vulnerable to Sh0vel, the bug that Tr3nch relies on to do most of its functions.
 			    		Head over to <b>chrome://extensions</b> and <a href="https://chromewebstore.google.com">the Chrome Webstore</a> while signed in. On chrome://extensions,
 				    	if you see <b>GoGuardian</b> or <b>Equatio</b> anywhere, that will be the extension you use for Tr3nch. If you don't have either of those installed, and
@@ -147,5 +148,3 @@ function Tr3nchGuide(){
         </div>
     );
 };
-
-export default Tr3nchGuide;
