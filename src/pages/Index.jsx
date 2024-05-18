@@ -27,6 +27,7 @@ function Button({ text = 'Link', link }) {
 <User
   name="Example Name"
   description="Description"
+  owner="true"
   buttonNames={["button1", "button2", "button3"]}
   buttonLinks={
     [
@@ -37,17 +38,26 @@ function Button({ text = 'Link', link }) {
   }
 />
 */
-function User({ name, description, buttonNames, buttonLinks }) {
+
+function User({ name, description, owner, buttonNames, buttonLinks }) {
   const formattedName = name.replace(/\s/g, '');
+  const isOwner = owner === "true";
 
   return (
     <div className="w-1/4 p-4 mb-8 pb-8">
       <div className="outline-dotted outline-2 outline-offset-2 outline-white p-4">
-        <img
-          className="disablePointerEvents rounded-full w-10 h-10 block mx-auto"
-          src={`pfps/${formattedName.toLowerCase()}.png`}
-          alt={name}
-        />
+        <div className="text-center relative">
+          {isOwner && (
+            <div className="relative inline-block">
+              <span className="text-2xl" title="Current Owner">👑</span>
+            </div>
+          )}
+          <img
+            className="disablePointerEvents rounded-full w-10 h-10 block mx-auto mt-2"
+            src={`pfps/${formattedName.toLowerCase()}.png`}
+            alt={name}
+          />
+        </div>
         <h2 className="text-center font-bold text-xl mb-2">{name}</h2>
         <p className="text-center mb-4">{description}</p>
         <div className="text-center">
@@ -59,6 +69,7 @@ function User({ name, description, buttonNames, buttonLinks }) {
     </div>
   );
 }
+
 
 /* Usage:
 <Project
@@ -96,10 +107,11 @@ function Project({ name, description, link }) {
   </Section>
 
 */
-function Section({ name, children }) {
+function Section({ name, description, children }) {
   return (
     <div>
       <h2 className="text-center font-bold text-2xl py-4">{name}</h2>
+      <p className="text-center font-bold"><i>{description}</i></p>
       <div className="flex flex-wrap justify-center">
         {children}
       </div>
@@ -128,11 +140,6 @@ export function Website() {
 
       <Section name="Projects">
         <Project
-          name="CRSH1TTY"
-          description="Disable WP without opening your chromebook via bruteforcing."
-          link="/crsh1tty/" />
-
-        <Project
           name="CROSMIDI"
           description="An RMA shim bootloader inspired by the popular tool Ventoy."
           link="javascript:alert('CROSMIDI: WIP');" />
@@ -149,23 +156,13 @@ export function Website() {
 
       </Section>
 
-      <Section name="Members">
-
-        <User
-          name="Kelsea"
-          description="16, Whelement's founder, I like Arch and love Hololive"
-          buttonNames={["Discord", "GitHub", "Steam"]}
-          buttonLinks={[
-            "https://discord.com/users/1175643738752680030",
-            "https://github.com/chrossystem",
-            "https://steamcommunity.com/profiles/76561199021462166"
-          ]} />
-
+      <Section name="Members" description="In order of join date">
 
         <User
           name="TheTechFrog"
           description="15, interested in cybersecurity, whelement's unlicensed therapist"
-          buttonNames={["Discord", "GitHub", "Whale"]}
+          owner="true"
+	  buttonNames={["Discord", "GitHub", "Whale"]}
           buttonLinks={[
             "https://discord.com/users/1060071562595807254",
             "https://github.com/TheSpiritOfDark",
@@ -174,7 +171,8 @@ export function Website() {
         <User
           name="boeing 747"
           description="i exist"
-          buttonNames={["Discord", "GitHub", "Timezone"]}
+          owner="false"
+	  buttonNames={["Discord", "GitHub", "Timezone"]}
           buttonLinks={[
             "https://discord.com/users/1037713379780993114",
             "https://github.com/notboeing747",
@@ -183,7 +181,8 @@ export function Website() {
         <User
           name="ZeglolTheThirtySixth"
           description="14, chromebook enthusiast, honorary firmware smasher"
-          buttonNames={["Discord", "GitHub", "Their IP Address"]}
+          owner="false"
+	  buttonNames={["Discord", "GitHub", "Their IP Address"]}
           buttonLinks={[
             "https://discord.com/users/1101547649477386331",
             "https://github.com/ZeglolTheThirtySixth",
@@ -193,7 +192,8 @@ export function Website() {
         <User
           name="Archimax"
           description="14, lead dev of CROSMIDI, interested in chromebooks"
-          buttonNames={["Discord", "GitHub", "Email"]}
+          owner="true"
+	  buttonNames={["Discord", "GitHub", "Email"]}
           buttonLinks={[
             "https://discord.com/users/988950574387068968",
             "https://github.com/EnterTheVoid-x86",
@@ -204,7 +204,8 @@ export function Website() {
         <User
           name="OlyB"
           description="Owner of TitaniumNetwork, Professional Firmware Smasher"
-          buttonNames={["Discord", "GitHub", "Matrix (Element)"]}
+          owner="false"
+	  buttonNames={["Discord", "GitHub", "Matrix (Element)"]}
           buttonLinks={[
             "https://discord.com/users/476169716998733834",
             "https://github.com/BinBashBanana",
@@ -212,21 +213,23 @@ export function Website() {
           ]}
         />
 
-        <User
-          name="Writable"
-          description="the yapping machine"
-          buttonNames={["Discord", "GitHub", "Their current location"]}
-          buttonLinks={[
-            "https://discord.com/users/1101547649477386331",
-            "https://github.com/MunyDev",
-            "https://earth.google.com/web/"
-          ]}
-        />
+	<User
+	  name="Riftriot"
+	  description="15, programmer, play ultrakill sometimes"
+	  owner="false"
+	  buttonNames={["Discord", "GitHub", "sick ass deadpool clip"]}
+	  buttonLinks={[
+	    "https://discord.com/users/578375908247863296",
+	    "https://github.com/Riftriot",
+	    "https://www.youtube.com/watch?v=Sy8nPI85Ih4"
+	  ]}
+	/>
 
         <User
           name="kxtz"
           description="15, basic frontend dev, i use arch btw, python, js and rust are my languages of choice"
-          buttonNames={["Discord", "GitHub", "Email"]}
+          owner="false"
+	  buttonNames={["Discord", "GitHub", "Email"]}
           buttonLinks={[
             "https://discord.com/users/952792525637312552",
             "https://github.com/kxtzownsu",
@@ -237,7 +240,8 @@ export function Website() {
         <User
           name="Evelyn344"
           description="Meow? (Waiting for something to happen?)"
-          buttonNames={["Discord", "GitHub", "Email"]}
+          owner="false"
+	  buttonNames={["Discord", "GitHub", "Email"]}
           buttonLinks={[
             "https://discord.com/users/402529533900881930",
             "https://github.com/Evelyn3440",
@@ -250,9 +254,26 @@ export function Website() {
       <Section name="Gone but not forgotten. o7">
         <User
           name="CoolOblivion759"
-          description="Ex. Whelement server owner & CRSH1TTY tester, NOTE: CoolOblivion759 has NOT passed away, he has decided to split ways with the Chromebook exploiting community."
-          buttonNames={[]}
+          description="Ex. Whelement server owner & CRSH1TTY tester, NOTE: CoolOblivion759 has NOT passed away, he has decided to split ways with the Chromebook exploiting community. (2/15/24)"
+          owner="false"
+	  buttonNames={[]}
           buttonLinks={[]}
+        />
+	
+        <User
+          name="Writable"
+          description="Ex. Whelement member & Ex. FWSmasher owner. NOTE: Writable did NOT pass away, he just decided to split ways with the unblocking community. (5/17/24)"
+          owner="false"
+	  buttonNames={[]}
+          buttonLinks={[]}
+        />
+
+	<User
+	  name="Kelsea"
+	  description="Ex. Whelement owner, orginal Whelement founder. NOTE: Kelsea has NOT passed away, she just decided to leave Whelement. (5/18/24)"
+     	  owner="false"
+	  buttonNames={[]}
+	  buttonLinks={[]}
         />
       </Section>
       <footer className="bg-gray-900 py-2 text-center fixed bottom-0 w-full p-3">
