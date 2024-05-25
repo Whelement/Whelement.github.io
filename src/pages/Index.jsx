@@ -169,16 +169,6 @@ export function Website() {
             `javascript:img = document.getElementById("whalelelele"); function youSpinMeRightRoundBabyRightRound() { img.animate( { transform: ['none', 'rotate(+10turn)'], }, { duration: 500, easing: 'cubic-bezier(1, 0, 0, 1)', }); }; youSpinMeRightRoundBabyRightRound();`
           ]} />
         <User
-          name="boeing 747"
-          description="i exist"
-          owner="false"
-	  buttonNames={["Discord", "GitHub", "Timezone"]}
-          buttonLinks={[
-            "https://discord.com/users/1037713379780993114",
-            "https://github.com/notboeing747",
-            "https://time.is/Canada"
-          ]} />
-        <User
           name="ZeglolTheThirtySixth"
           description="14, chromebook enthusiast, honorary firmware smasher"
           owner="false"
