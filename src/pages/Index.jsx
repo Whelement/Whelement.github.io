@@ -168,16 +168,6 @@ export function Website() {
             "https://github.com/TheSpiritOfDark",
             `javascript:img = document.getElementById("whalelelele"); function youSpinMeRightRoundBabyRightRound() { img.animate( { transform: ['none', 'rotate(+10turn)'], }, { duration: 500, easing: 'cubic-bezier(1, 0, 0, 1)', }); }; youSpinMeRightRoundBabyRightRound();`
           ]} />
-        <User
-          name="ZeglolTheThirtySixth"
-          description="14, chromebook enthusiast, honorary firmware smasher"
-          owner="false"
-	  buttonNames={["Discord", "GitHub", "Their IP Address"]}
-          buttonLinks={[
-            "https://discord.com/users/1101547649477386331",
-            "https://github.com/ZeglolTheThirtySixth",
-            "http://127.0.0.1"
-          ]} />
 
         <User
           name="Archimax"
@@ -241,31 +231,6 @@ export function Website() {
 
       </Section>
 
-      <Section name="Gone but not forgotten. o7">
-        <User
-          name="CoolOblivion759"
-          description="Ex. Whelement server owner & CRSH1TTY tester, NOTE: CoolOblivion759 has NOT passed away, he has decided to split ways with the Chromebook exploiting community. (2/15/24)"
-          owner="false"
-	  buttonNames={[]}
-          buttonLinks={[]}
-        />
-	
-        <User
-          name="Writable"
-          description="Ex. Whelement member & Ex. FWSmasher owner. NOTE: Writable did NOT pass away, he just decided to split ways with the unblocking community. (5/17/24)"
-          owner="false"
-	  buttonNames={[]}
-          buttonLinks={[]}
-        />
-
-	<User
-	  name="Kelsea"
-	  description="Ex. Whelement owner, orginal Whelement founder. NOTE: Kelsea has NOT passed away, she just decided to leave Whelement. (5/18/24)"
-     	  owner="false"
-	  buttonNames={[]}
-	  buttonLinks={[]}
-        />
-      </Section>
       <footer className="bg-gray-900 py-2 text-center fixed bottom-0 w-full p-3">
         <a
           href="https://github.com/Whelement"
