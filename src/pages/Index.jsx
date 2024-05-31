@@ -204,19 +204,6 @@ export function Website() {
 	    "https://www.youtube.com/watch?v=Sy8nPI85Ih4"
 	  ]}
 	/>
-
-        <User
-          name="kxtz"
-          description="15, basic frontend dev, i use arch btw, python, js and rust are my languages of choice"
-          owner="false"
-	  buttonNames={["Discord", "GitHub", "Email"]}
-          buttonLinks={[
-            "https://discord.com/users/952792525637312552",
-            "https://github.com/kxtzownsu",
-            "mailto:me@kxtz.dev"
-          ]}
-        />
-
         <User
           name="Evelyn344"
           description="Meow? (Waiting for something to happen?)"
